@@ -1,5 +1,25 @@
 # shconf
 
+``shconf`` is a bash config toolkit supporting Spring-like "property placeholder" and getting/setting config value of specified key.
+
+## QuickStart
+
+- Usage
+
+```
+$ shconf
+Usage (long format): shconf {version|getprop|setprop|replaceby}
+Usage (short format): shconf {-v|-g|-s|-r}
+
+```
+
+- getting config value
+
+```
+$ shconf -g backend.service example/app.conf
+10.10.1.100:8080
+```
+
 ## Preparation
 
 - centralized conf: ``app.conf``
@@ -59,6 +79,11 @@ overwrite placeholder variables like ``${backend.service}``, ``${port}`` and ``$
 ```
 replaceby.sh example/nginx.conf example/app.conf
 ```
+OR
+
+```
+$ shconf replaceby example/nginx.conf example/app.conf
+```
 
 overwritten contents:
 
@@ -67,7 +92,7 @@ upstream databaseupstream {
         server 10.10.1.100:8080;
 }
 
-..... 
+.....
 
 ```
 
@@ -79,6 +104,10 @@ upstream databaseupstream {
 $ sh getprop.sh backend.service example/app.conf
 10.10.1.100:8080
 ```
+OR
+```
+$ shconf getprop backend.service example/app.conf
+```
 
 - set value of specified key
 
@@ -86,4 +115,10 @@ $ sh getprop.sh backend.service example/app.conf
 $ setprop.sh backend.service 127.0.0.1:10086 example/app.conf
 $ sh getprop.sh backend.service example/app.conf
 127.0.0.1:10086
+```
+
+OR
+```
+$ shconf -r backend.service 127.0.0.1:10086 example/app.conf
+
 ```
