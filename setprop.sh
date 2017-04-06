@@ -24,7 +24,8 @@ CONFIG_FILE=$3
 # sed -i "s+\($TARGET_KEY *= *\).*+\1$REPLACE_VAL+" $CONFIG_FILE # No backup
 
 # fuction "ostype" return Mac, Linux and so on
-function ostype () {
+# function ostype () { ... }: NOT SUPPORTED ON Ubuntu
+ostype () {
   local OSNAME="`uname`"
   case $OSNAME in
     'Linux')
