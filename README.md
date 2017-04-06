@@ -60,6 +60,17 @@ overwrite placeholder variables like ``${backend.service}``, ``${port}`` and ``$
 replaceby.sh example/nginx.conf example/app.conf
 ```
 
+overwritten contents:
+
+```
+upstream databaseupstream {
+        server 10.10.1.100:8080;
+}
+
+..... 
+
+```
+
 ## Other Tools
 
 - get value of specified key
