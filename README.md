@@ -2,9 +2,11 @@
 
 ``shconf`` is a bash config toolkit supporting Spring-like "property placeholder" and getting/setting config value of specified key.
 
-- Mac
-- CentOS
-- 
+function testing ok on these platforms:
+
+- Mac Darwin
+- CentOS 6.X
+- Ubuntu 14.X
 
 ## QuickStart
 
