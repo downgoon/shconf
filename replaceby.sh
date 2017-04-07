@@ -42,8 +42,9 @@ do
         echo \'$conf_key\': \'$conf_val\'  # debuging
     fi
 
-    #sed -i.backup "s/[$][{]$conf_key[}]/$conf_val/g" $REFER_FILE # backup before modifying
-    sed -i ''  "s+[$][{]$conf_key[}]+$conf_val+g" $REFER_FILE # No backup
+    # on Mac:  cmd without backup is "sed -i ''"
+    # on Ubuntu: cmd without backup is "sed -i"
+    sed -i.backup  "s+[$][{]$conf_key[}]+$conf_val+g" $REFER_FILE # backup before modifying
 
   else
     if [ $isDebug = "true" ]; then
