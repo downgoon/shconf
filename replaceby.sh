@@ -23,7 +23,7 @@ REFER_FILE=$1
 CONFIG_FILE=$2
 
 isDebug="false"
-if [[ $# -ge 3 && $3 == "debug" ]]
+if [ $# -ge 3 -a "$3" = "debug" ]
 then
   isDebug="true"
 fi
